@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const minLengthVal = [2, "{PATH} must be at least {MINLENGTH} characters."]
+const minLengthVal = [5, "{PATH} must be at least {MINLENGTH} characters."]
 
 const JokeSchema = new mongoose.Schema(
     {
@@ -12,7 +12,7 @@ const JokeSchema = new mongoose.Schema(
         punchline: {
             type: String,
             required: [true, "{PATH} is required."],
-            minlength: [5, "{PATH} must be at least {MINLENGTH} characters."],
+            minlength: minLengthVal,
         },
     },
     { timestamps: true }
